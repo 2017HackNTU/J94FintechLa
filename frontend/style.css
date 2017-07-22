@@ -1,6 +1,8 @@
 body {
   width: 100%;
   font-family: 'Noto Sans TC', sans-serif;
+  display: flex;
+  flex-direction: column;
 }
 /*.nav {
   display: flex;
@@ -77,6 +79,50 @@ li a:hover:not(.active) {
   padding-bottom: 400px;
 }
 
+.benefit {
+  color: #736557;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  align-self: center;
+}
+
+.benefit > h1 {
+  font-size: 2.2em;
+  font-weight: 500;
+  text-align: center;
+}
+
+.benefit > h2 {
+  margin: 1.5em;
+  padding-left: 150px;
+  font-size: 1.5em;
+  font-weight: 400;
+}
+
+.method {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #736557;
+  margin-bottom: 100px;
+}
+
+.method > h1 {
+  font-size: 3em;
+}
+
+.method > form {
+  margin: 20px;
+  font-size: 2em;
+}
+
+.method > form > input {
+  margin: 20px;
+  font-size: 500px;
+}
 .title {
   margin: auto;
 }
@@ -103,6 +149,17 @@ li a:hover:not(.active) {
   border-radius: 10px;
   font-size: 1em;
   background-color: lightgreen;
+}
+
+#methodConfirm {
+  width: 300px;
+height: 80px;
+border-radius: 10px;
+font-size: 1em;
+background-color: lightgreen;
+margin-left: 100px;
+margin-top: 100px;
+color: #736557;
 }
 
 .item_detail {
