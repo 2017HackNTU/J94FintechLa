@@ -17,14 +17,6 @@
       <li style="float:right"><a href="#login">登入</a></li>
     </ul>
   </div>
-  <!-- <h1 id="url"></h1>
-  <script type="text/javascript">
-    var url = window.location.href;
-    function truncate(url) {
-      return url.split("?url=")[1];
-    }
-    document.getElementById("url").innerHTML = truncate(url);
-  </script> -->
   <div class="item_detail">
     <img src="000001_1498225779.jpg" alt="item_image">
     <div class="detail">
@@ -37,33 +29,13 @@
 ◆內建腳架 (無支架時 5° 或有支架時 20°)
 ◆3合1纜線可輕鬆在Mac或PC上設定
 ◆選購的 ExpressKey™ 遙控器上有 17 個可自訂功能、應用程式專用的按鍵 </p>
-      <p class="price">$:10000000000</p>
-      <!-- <div>
-        <select style="width: 3em;">
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-        </select>
-      </div> -->
-      <div class="quantity">
-        <div id="mainselection">
-          <form id="info"></form>
-          <select name="quantity" form="info">
-            <option>選擇數量</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-          </select>
-        </div>
-      </div>
-      </div>
+      <p>單價:100</p>
+      <p>數量:100</p>
+      <p>總額:10000</p>
+
     </div>
   </div>
-  <div class="offer">
+  <div class="remind">
     本商品可額外享有：
     <ol>
       <li>30天先使用後付款</li>
@@ -71,9 +43,15 @@
       <li>無痛分期付款零利率</li>
     </ol>
   </div>
+  <div class="password">
+    <form id="password">
+      <input class="passwordConfirm" type="text" name="passwordConfirm" placeholder="輸入您的密碼以確認結帳">
+      <!-- <input id="go_btn" type="submit" value="GO" }> -->
+    </form>
+  </div>
   <div class="button">
+    <button id="buy" type="button" onclick="index4.html">確認結帳</button>
     <button id="cancel" type="button" onclick="history.back()">取消</button>
-    <button id="buy" type="button" onclick="#">結帳</button>
   </div>
   <div class="footer">
     <p>聯絡資訊：2017HackNTU J94FintechLa</p>
