@@ -1,13 +1,19 @@
 import requests
 from selenium import webdriver
 from lxml import etree
+import re
 import csv
 import sys
+from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 # reference: http://tw.pyladies.com/~marsw/crawler02.slides.html#/3
 
-url = sys.argv[1]
+# change to mobile website
+# url = sys.argv[1]
+# match = re.split(r'\?', 'http://24h.pchome.com.tw/prod/DGAD7P-A9007UFW1?q=/S/DGADAH')
+# url = match[0]
+# url = url[:11] + 'm.' + url[11:]
 
-driver = webdriver.PhantomJS(executable_path='D:/PythonTest/crawler/hack/phantomjs-2.1.1-windows/bin/phantomjs')
+driver = webdriver.PhantomJS(executable_path=r'path_to_phantomjs/bin/phantomjs')
 driver.get(url)
 pageSource = driver.page_source
 driver.close()
@@ -18,7 +24,7 @@ try:
     tagtotal =''
     for tag in tags:
         tagtotal += tag
-    print(tagtotal)
+    print(tagtotal.strip())
 except:
     print("name craw fail")
 try:
@@ -31,9 +37,3 @@ try:
     print(tags3)
 except:
     print("img craw fail")
-
-
-# file = open('product_data.csv', 'w')
-# csvCursor = csv.writer(file)
-# csvCursor.writerow([tagtotal, tags2, tags3])
-# file.close()
