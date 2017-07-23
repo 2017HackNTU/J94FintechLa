@@ -1,54 +1,70 @@
+<?php
+    mysql_connect("127.0.0.1","root","hackntu2017");//與localhost連線、root是帳號、密碼處輸入自己設定的密碼
+    mysql_select_db("account");//我要從member這個資料庫撈資料
+    mysql_query("set names 'utf8'");//設定utf8 中文字才不會出現亂碼
+    ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" type="text/css" href="style.css">
-  <script type="text/javascript" src="action.js"></script>
-  <style>
-    @import url(//fonts.googleapis.com/earlyaccess/notosanstc.css);
-  </style>
-  <title>J94 Fintech la<</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="stylesheet" type="text/css" href="style.css">
+<script type="text/javascript" src="action.js"></script>
+<title>J94 Fintech la<</title>
+<style>
+@import url(//fonts.googleapis.com/earlyaccess/notosanstc.css);
+            </style>
 </head>
 <body>
-  <div class="nav">
-    <ul>
-      <li><img src="20270220_1363048590429975_908098707_n.png" alt="logo"></li>
-      <li><a href="#news">最新消息</a></li>
-      <li><a href="#about">關於我們</a></li>
-      <li style="float:right"><img src="avatar-customers-faith-mitchell-circle.png" alt="avatar" href="#login" style="width: 60px; height: 60px; margin-right: 10px;"></li>
-    </ul>
-  </div>
-  <div class="item_detail">
-    <img src="000001_1498225779.jpg" alt="item_image">
-    <div class="detail">
-      <p>商品名稱：超酷相機</p>
-      <p>領先技術★8192階感應
-◆支援多點觸控功能
-◆高解析 13.3吋 Full HD 1920 x 1080
-◆顯示颜色 1670 萬色 / 色域 87% Adobe RGB
-◆全新8,192 階感壓等級的 Wacom Pro Pen 2
-◆內建腳架 (無支架時 5° 或有支架時 20°)
-◆3合1纜線可輕鬆在Mac或PC上設定
-◆選購的 ExpressKey™ 遙控器上有 17 個可自訂功能、應用程式專用的按鍵 </p>
-      <p>單價:100</p>
-      <p>數量:100</p>
-      <p>總額:10000</p>
+<div class="nav">
+<ul>
+<li><img src="20270220_1363048590429975_908098707_n.png" alt="logo"></li>
+<li><a href="#news">最新消息</a></li>
+<li><a href="#about">關於我們</a></li>
+<li style="float:right"><a href="#login">james7751139@gmail.com</a></li>
+</ul>
+</div>
+<?php
+    
+    $query="SELECT * FROM `tmpitem`";
+    //echo "select * from `itemlist` where `url` like '".$url."'";
+    $data=mysql_query($query);//從member中選取全部(*)的資料
+    //echo "123".$data;
+    $rs=mysql_fetch_row($data);
+    if(empty($rs))
+    {
+        sleep(3);
+    }
+    ?>
+<div class="item_detail">
+<img src="<?php echo $rs[3]?>" alt="item_image">
+<div class="detail">
+<p>商品名稱：<?php echo $rs[2]?></p>
+<pre>【指定度最高的DIY裝機碟】
+★容量：500GB 
+★高相容度．在各種系統及平台可以發揮最高效能 
+★No Touch磁碟表面停放技術．降低讀寫時磁頭的磨損 
+★硬碟輕鬆升級．不需重新安裝作業系統 
+★原廠2年保固 
+</pre>
+<p>單價:<?php echo $rs[4]?></p>
+<p>數量:<?php echo $rs[5]?></p>
+<p>總額:<?php echo $rs[6]?></p>
 
-    </div>
-  </div>
-  <div class="remind">
-    本商品可額外享有：
-    <ol>
-      <li>30天先使用後付款</li>
-      <li>延長鑑賞期7天</li>
-      <li>無痛分期付款零利率</li>
-    </ol>
-  </div>
+</div>
+</div>
+<div class="remind">
+本商品可額外享有：
+<ol>
+<li>30天先使用後付款</li>
+<li>延長鑑賞期7天</li>
+<li>無痛分期付款零利率</li>
+</ol>
+</div>
   <div class="button">
     <button id="cancel" type="button" onclick="javascript:location.href='https://www.t-cat.com.tw/Inquire/Trace.aspx'">查詢訂單資訊</button>
-    <button id="buy" type="button" onclick="javascript:location.href='index5.html'">確認收貨</button>
+    <button id="buy" type="button" onclick="location.href='index5.html'">確認收貨</button>
   </div>
   <div class="footer">
     <p>聯絡資訊：2017HackNTU J94FintechLa</p>
