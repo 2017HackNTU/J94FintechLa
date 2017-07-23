@@ -132,6 +132,11 @@ li a:hover:not(.active) {
   color: #736557;
 }
 
+.title > h2 {
+  color: #736557;
+  font-size: 2em;
+}
+
 .search {
   margin: auto;
 }
